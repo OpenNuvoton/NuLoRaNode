@@ -1,0 +1,27 @@
+/****************************************************************************
+ * @file     factory_json.h
+ * @version  V1.10
+ * @brief    Device factory parameter file
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ * @copyright (C) 2020 Nuvoton Technology Corp. All rights reserved.
+ *****************************************************************************/
+
+#ifndef __FACTORY_JSON__
+#define __FACTORY_JSON__
+
+char g_factory_json [] = 
+"\
+{ \n\
+\"ActivationOTAA\":\"1\", \n\
+\"DeviceAddr\":[\"0x26\",\"0x01\",\"0x1E\",\"0x66\"], \n\
+\"DEVICE_EUI\":[\"0x41\",\"0x6A\",\"0x56\",\"0x41\",\"0xA2\",\"0xFA\",\"0x26\",\"0x66\"], \n\
+\"JOIN_EUI\":[\"0x00\",\"0x00\",\"0x00\",\"0x00\",\"0x00\",\"0x00\",\"0x00\",\"0x00\"], \n\
+\"PIN_CODE\":[\"0x00\",\"0x01\",\"0x02\",\"0x03\"], \n\
+\"APP_KEY\":[\"0x03\",\"0xC1\",\"0x74\",\"0x6F\",\"0xE2\",\"0x6A\",\"0x41\",\"0x9E\",\"0x45\",\"0x3D\",\"0x2B\",\"0xE6\",\"0x30\",\"0x6C\",\"0xB1\",\"0x91\"], \n\
+\"NWK_KEY\":[\"0x03\",\"0xC1\",\"0x74\",\"0x6F\",\"0xE2\",\"0x6A\",\"0x41\",\"0x9E\",\"0x45\",\"0x3D\",\"0x2B\",\"0xE6\",\"0x30\",\"0x6C\",\"0xB1\",\"0x91\"] \n\
+} \n\
+";
+
+#endif
+
