@@ -1,3 +1,6 @@
 [submodule "BSP/M251BSP"]
 	path = BSP/M251BSP
 	url = https://github.com/OpenNuvoton/M251BSP.git
+[submodule "LoRaMac-node"]
+	path = LoRaMac-node
+	url = https://github.com/Lora-net/LoRaMac-node.git
