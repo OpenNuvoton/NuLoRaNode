@@ -27,11 +27,4 @@
  */
 #define LORAWAN_NETWORK_ID                                 ( uint32_t )0
 
-/*!
- * Device active region. LORAMAC_REGION_AU915/LORAMAC_REGION_CN470/LORAMAC_REGION_US915/LORAMAC_REGION_EU868
- */
-#define ACTIVE_REGION										LORAMAC_REGION_US915
-
-
-
 #endif
