@@ -344,6 +344,7 @@ static int GetDeviceAddrFromConfig(
 	cJSON *psItem;
 	cJSON *psArrayItem;
 	int i;
+	uint32_t u32DeviceAddr = 0;
 
 	if(s_psConfigRoot == NULL)
 		return -1;
@@ -357,8 +358,11 @@ static int GetDeviceAddrFromConfig(
 		int32_t i32Temp;
 		psArrayItem = cJSON_GetArrayItem(psItem, i);
 		i32Temp = strtoul(psArrayItem->valuestring, NULL, 0);
-		*pu32DeviceAddr |= i32Temp << (i * 8); 
+		u32DeviceAddr = u32DeviceAddr << 8;
+		u32DeviceAddr = u32DeviceAddr | (uint8_t)i32Temp;
 	}
+
+	*pu32DeviceAddr = u32DeviceAddr; 
 	
 	return 0;
 }
@@ -1207,26 +1211,27 @@ int main( void )
 	LoRaMacMibSetRequestConfirm( &mibReq );
 
 	GetAPPKeyFromConfig(appKey);
+	GetNWKKeyFromConfig(nwkKey);
+
 	mibReq.Type = MIB_APP_KEY;
 	mibReq.Param.AppKey = appKey;
 	LoRaMacMibSetRequestConfirm( &mibReq );
 
-	GetAPPKeyFromConfig(appKey);
 	mibReq.Type = MIB_APP_S_KEY;
 	mibReq.Param.AppKey = appKey;
 	LoRaMacMibSetRequestConfirm( &mibReq );
 
-	GetNWKKeyFromConfig(nwkKey);
 	mibReq.Type = MIB_NWK_KEY;
-	mibReq.Param.NwkKey = nwkKey;
+	if(u32ActivationOTAA)
+		mibReq.Param.NwkKey = appKey;
+	else
+		mibReq.Param.NwkKey = nwkKey;
 	LoRaMacMibSetRequestConfirm( &mibReq );
 
-	GetNWKKeyFromConfig(nwkKey);
 	mibReq.Type = MIB_NWK_S_ENC_KEY;
 	mibReq.Param.NwkKey = nwkKey;
 	LoRaMacMibSetRequestConfirm( &mibReq );
 
-	GetNWKKeyFromConfig(nwkKey);
 	mibReq.Type = MIB_S_NWK_S_INT_KEY;
 	mibReq.Param.NwkKey = nwkKey;
 	LoRaMacMibSetRequestConfirm( &mibReq );
