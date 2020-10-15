@@ -10,9 +10,10 @@ NuLoRaNode is Nuvoton microcontroller porting for LoRaMac-node. LoRaMac-node is 
 
 ----
 ## Supported target
-Board            |MCU      |LoRaModule           |Required ROM size  |Required RAM size
-:----------------|---------|---------------------|-------------------|------------------
-NuMaker-IOT-M252 |M252     |RYLR890(EU868/US915) |60KB               |13KB
+Board                     |MCU      |LoRaModule     |Required ROM size  |Required RAM size
+:-------------------------|---------|---------------|-------------------|------------------
+NuMaker-LoRaD-M252-H      |M252     |RYLR890        |60KB               |13KB
+NuMaker-LoRaD-M252-L      |M252     |RYLR400        |57KB               |11KB
 
 ----
 ## How to run NuLoRaNode
@@ -20,7 +21,7 @@ NuMaker-IOT-M252 |M252     |RYLR890(EU868/US915) |60KB               |13KB
 2. Download and install [Nu-Link Keil Driver](https://www.nuvoton.com/resource-download.jsp?tp_GUID=SW1120200221180521)
 3. Hardware setup steps  
 a. Turn ICE function switch pin 1,2,3 on and pin 4 off  
-![NuMaker-IOT-M252](https://imgur.com/g6h5oWl.jpg)  
+![NuMaker-IOT-M252](https://imgur.com/9x2oATu.jpg)  
 b. Connect USB ICE to PC  
 4. git clone --recursive https://github.com/OpenNuvoton/NuLoRaNode.git  
 5. Browsing into device application folder and double click uVision project file(KEIL/xxx.uvprojx)  
